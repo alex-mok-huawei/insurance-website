@@ -1,6 +1,11 @@
-@import "tailwindcss";
+import pathlib
 
-:root {
+BASE = pathlib.Path(r"C:\Users\MSY\Desktop\insurance-website\src\app")
+
+# globals.css
+css = '''@import "tailwindcss";
+
+::root {
   --background: #ffffff;
   --foreground: #171717;
   --primary: #1e40af;
@@ -27,3 +32,6 @@ body {
 html {
   scroll-behavior: smooth;
 }
+'''
+(BASE / "globals.css").write_text(css.strip(), encoding="utf-8")
+print("globals.css updated")
